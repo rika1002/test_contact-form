@@ -6,7 +6,7 @@
 }
 
 .header-area {
-    padding: 10px 40px;
+    padding: 5px 40px;
     text-align: center;
     position: relative;
     border-bottom: 1px solid #82756A;
@@ -14,12 +14,12 @@
 }
 
 .header-ttl {
-    margin: 5;
     line-height: 50px;
     color: #8B7969;
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .link-area {

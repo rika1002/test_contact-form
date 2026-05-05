@@ -1,23 +1,24 @@
 * {
     font-family: Inika;
 }
-.body{
-    background:#fff;
-    margin:0;
-    padding:0;
-    width:100%;
+
+.body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
-.header-index{
+.header-index {
     display: flex;
-    padding:20px 0px;
+    padding: 20px 0px;
     justify-content: center;
-    position:relative;
-    border-bottom:1px solid #BAA899;
-    background:#fff;
+    position: relative;
+    border-bottom: 1px solid #BAA899;
+    background: #fff;
 }
 
-.header-ttl{
+.header-ttl {
     margin: 0;
     line-height: 50px;
     color: #8B7969;
@@ -25,8 +26,9 @@
     font-style: normal;
     font-weight: 400;
     margin: 0;
+    font-family: "Times New Roman", Times, serif;
 }
 
-.main{
-    padding:30px 50px;
+.main {
+    padding: 30px 50px;
 }

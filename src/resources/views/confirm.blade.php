@@ -34,6 +34,9 @@
                 <th class="column-name">電話番号</th>
                 <td class="table-cell">
                     <input class="read-input" name="tel" type="tel" value="{{ $entireTel }}" readonly>
+                    <input type="hidden" name="front-tel" value="{{ $contact['front-tel'] }}">
+                    <input type="hidden" name="middle-tel" value="{{ $contact['middle-tel'] }}">
+                    <input type="hidden" name="back-tel" value="{{ $contact['back-tel'] }}">
                 </td>
             </tr>
             <tr class="table-line">

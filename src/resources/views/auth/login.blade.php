@@ -18,7 +18,7 @@
             <input name="email" type="email" placeholder="例: test@exapmple.com" value="{{old('email')}}">
             <div class="error-message">
                 @error('email')
-                {{$message}}
+                <p class="error-message">{{ $message }}</p>
                 @enderror
             </div>
         </div>

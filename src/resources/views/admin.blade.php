@@ -22,7 +22,6 @@
         <div class="search-form">
             <div class="name-email">
                 <input name="name_email_filter" type="text" class="name_email_filter" placeholder="名前やメールアドレスを入力してください">
-                <input type="submit" value="🔍" class="search-button">
             </div>
             <div class="gender">
                 <select name="gender_dropdown" class="gender_dropdown">
@@ -45,6 +44,10 @@
             </div>
             <div class="date">
                 <input type="date" name="date_calendar" class="date_calendar">
+            </div>
+            <button type="submit" class="search-button">検索</button>
+            <div class="reset">
+                <a href="/admin" class="reset-link">リセット</a>
             </div>
         </div>
     </form>
@@ -134,9 +137,6 @@
                     <button class="delete-button" type="submit">削除</button>
                 </form>
             </div>
-        </div>
-        <div class="reset">
-            <a href="/admin" class="reset-link">リセット</a>
         </div>
     </div>
 </div>

@@ -36,15 +36,15 @@
                     <th class="column-name">性別<span class="attention">※</span></th>
                     <td id="gender" class="table-cell">
                         <div class="radio-item">
-                            <input class="input-area gender-radio" type="radio" name="gender" value="男性" checked>
+                            <input class="input-area gender-radio" type="radio" name="gender" value="男性" {{ old('gender', '男性') == '男性' ? 'checked' : '' }}>
                             <label>男性</label>
                         </div>
                         <div class="radio-item">
-                            <input class="input-area gender-radio" type="radio" name="gender" value="女性">
+                            <input class="input-area gender-radio" type="radio" name="gender" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }}>
                             <label>女性</label>
                         </div>
                         <div class="radio-item">
-                            <input class="input-area gender-radio" type="radio" name="gender" value="その他">
+                            <input class="input-area gender-radio" type="radio" name="gender" value="その他" {{ old('gender') == 'その他' ? 'checked' : '' }}>
                             <label>その他</label>
                         </div></br>
                         <div class="error-message">
@@ -76,8 +76,12 @@
                             <input class="input-area tel-input" name="back-tel" value="{{old('back-tel')}}">
                         </div>
                         <div class="error-message">
-                            @if($errors->has('front-tel') || $errors->has('middle-tel') || $errors->has('back-tel') )
-                            電話番号を入力してください
+                            @if($errors->has('front-tel'))
+                                {{ $errors->first('front-tel') }}
+                            @elseif($errors->has('middle-tel'))
+                                {{ $errors->first('middle-tel') }}
+                            @elseif($errors->has('back-tel'))
+                                {{ $errors->first('back-tel') }}
                             @endif
                         </div>
                     </td>
@@ -103,13 +107,14 @@
                     <th class="column-name">お問い合わせの種類<span class="attention">※</span></th>
                     <td class="table-cell">
                         <div id="category">
-                            <select class="input-area category-select" name="category_id" value="{{old('category_id')}}">
-                                <option selected disabled>選択してください</option>
-                                <option value="商品のお届けについて">1.商品のお届けについて</option>
-                                <option value="商品の交換について">2.商品の交換について</option>
-                                <option value="商品トラブル">3.商品トラブル</option>
-                                <option value="ショップへのお問い合わせ">4.ショップへのお問い合わせ</option>
-                                <option value="その他">5.その他</option>
+                            <select class="input-area category-select" name="category_id">
+                                <option value="" disabled {{ old('category_id') == '' ? 'selected' : '' }}>選択してください</option>
+
+                                <option value="商品の届けについて" {{ old('category_id') == '商品の届けについて' ? 'selected' : '' }}>1.商品の届けについて</option>
+                                <option value="商品の交換について" {{ old('category_id') == '商品の交換について' ? 'selected' : '' }}>2.商品の交換について</option>
+                            <option value="商品トラブル" {{ old('category_id') == '商品トラブル' ? 'selected' : '' }}>3.商品トラブル</option>
+                                <option value="ショップへのお問い合わせ" {{ old('category_id') == 'ショップへのお問い合わせ' ? 'selected' : '' }}>4.ショップへのお問い合わせ</option>
+                                <option value="その他" {{ old('category_id') == 'その他' ? 'selected' : '' }}>5.その他</option>
                             </select>
                         </div>
                         <div class="error-message">

@@ -27,7 +27,11 @@ Route::post('/thanks', [ContactController::class, 'store']);
 
 Route::get('/register', [AuthController::class, 'registerView']);
 
-Route::get('/login', [AuthController::class, 'loginView']);
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::get('/login', [AuthController::class, 'loginView'])->name('login');
+
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ContactController::class, 'admin']);

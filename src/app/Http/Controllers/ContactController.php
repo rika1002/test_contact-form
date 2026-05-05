@@ -79,7 +79,7 @@ class ContactController extends Controller
 
     public function admin()
     {
-        $contacts = Contact::Paginate(10);
+        $contacts = Contact::Paginate(7);
 
         for ($i = 0; $i < count($contacts); $i++) {
             $gender_type = $contacts[$i]['gender'];
@@ -126,7 +126,7 @@ class ContactController extends Controller
 
 
 
-        $contacts = $query->Paginate(10);
+        $contacts = $query->Paginate(7);
 
         if (!empty($contacts)) {
             for ($i = 0; $i < $columnsCount; $i++) {
